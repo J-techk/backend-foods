@@ -1,5 +1,5 @@
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
@@ -18,7 +18,14 @@ connectCloudinary();
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors(
+    cors({
+      origin: ["https://backend-foods-eight.vercel.app/"],
+      credentials: true,
+    }),
+  ),
+);
 
 // app endpoints
 app.use("/api/user", userRouter);
