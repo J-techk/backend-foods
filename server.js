@@ -19,14 +19,11 @@ connectCloudinary();
 // middleware
 app.use(express.json());
 app.use(
-  cors(
-    cors({
-      origin: ["https://backend-foods-eight.vercel.app/"],
-      credentials: true,
-    }),
-  ),
+  cors({
+    origin: "https://frontendfood-seven.vercel.app",
+    credentials: true,
+  }),
 );
-
 // app endpoints
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
