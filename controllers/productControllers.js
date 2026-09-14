@@ -92,20 +92,13 @@ const addProduct = async (req, res) => {
       description,
       price,
       category,
-      image: imageUrl,
+      image: result.secure_url,
       date: Date.now(),
     });
 
     await product.save();
 
-    res.json({
-      success: true,
-      message: "Product added successfully",
-    });
-
-    await product.save();
-
-    res.json({
+    res.status(201).json({
       success: true,
       message: "Product added successfully",
       product,
