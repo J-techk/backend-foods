@@ -20,7 +20,10 @@ connectCloudinary();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://frontendfood-seven.vercel.app",
+    origin: [
+      "https://frontendfood-seven.vercel.app",
+      "https://admin-food-eg6nn012m-j-techks-projects.vercel.app",
+    ],
     credentials: true,
   }),
 );
