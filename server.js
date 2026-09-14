@@ -18,13 +18,16 @@ connectCloudinary();
 
 // middleware
 app.use(express.json());
+
 app.use(
   cors({
     origin: [
+      "https://admin-food-lemon.vercel.app",
       "https://frontendfood-seven.vercel.app",
-      "https://admin-food-eg6nn012m-j-techks-projects.vercel.app",
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization", "token"],
   }),
 );
 // app endpoints
